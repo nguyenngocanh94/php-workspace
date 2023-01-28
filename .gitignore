@@ -3,6 +3,5 @@
 *.key
 .env
 mysql_data
-app/*
 .idea
 .vscode
