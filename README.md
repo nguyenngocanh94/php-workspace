@@ -12,13 +12,16 @@ it is all in one docker-compose for php development. Follow these step to start.
     sudo ./make.sh
  ```
 2. Clone project into App folder. 
+
 3. Run init script to create project web.
 ```bash
   # sudo ./init.sh laravel laravel/public
   sudo ./init.sh {sitename} {index.php directory} 
 ```
 remember that name of folder is sitename.
-4. manually access into `php8` container to run `composer install` and do some project setup commands (migrate, seed database ...).
+
+4. manually access into `php8` container to run `composer install` and do some project setup commands (migrate, seed database ...)
+
 5. enjoy by access http://sitename.test
 
 ### Note:
