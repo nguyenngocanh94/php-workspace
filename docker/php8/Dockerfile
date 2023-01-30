@@ -82,7 +82,7 @@ RUN chmod 0644 /etc/cron.d/laravel-scheduler
 #--------------------------------------------------------------------------
 #
 
-ADD ./laravel.ini /usr/local/etc/php/conf.d
+ADD ./config.ini /usr/local/etc/php/conf.d
 
 #####################################
 # Aliases:

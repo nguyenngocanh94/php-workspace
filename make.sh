@@ -1,5 +1,10 @@
 #bash/sh
 
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+
+echo "${yellow} Starting de facto host ip address"
+
 os=$(uname -s)
 # Check if the operating system is Ubuntu
 if [ "$os" == "Darwin" ]; then
@@ -22,5 +27,9 @@ new_config=$(sed -e "s/HOST/$hostip/g" docker/php8/config.ini)
 
 echo "$new_config"  > docker/php8/config.ini
 
+echo "${yellow} Setup env file"
+
 cp ./.env.example ./.env
 
+echo "${green} Up DOCKER COMPOSE ... "
+docker-compose up -d
