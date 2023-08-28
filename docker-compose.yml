@@ -21,6 +21,20 @@ services:
             - sail
         expose:
             - "9000"
+    mysql:
+        image: mysql:8.0-oracle
+        environment:
+            MYSQL_USER: ${MYSQL_USER:-admin}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:-password}
+        volumes:
+            - ./mysql_data:/var/lib/mysql
+        ports:
+            - ${MYSQL_HOST_PORT:-3306}:3306
+        networks:
+            - sail
+        restart: unless-stopped
+
 
     pgsql:
         image: 'postgres:14'
